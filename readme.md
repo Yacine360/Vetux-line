@@ -1,14 +1,14 @@
-Project Symfony
+**Project Symfony**
 
-Name : Vetux-Line
+*Name* : Vetux-Line
 
-Première Partie 
+***Première Partie***
 
-Type : Fusion of 2 csv files to 1
+*Type* : Fusion of 2 csv files to 1
 
 What we need to fusion : genre, titre, nom, prénom, email, date de naissance, num tel, CCType, CCNumber, CVV2, CCExpires, adresse physique (plusieurs colonnes), taille, poids, véhicule, coordonnées GPS.
 
-Selected :
+*Selected* :
 
 1. seules les personnes majeures à la date de création du fichier devront être sélectionnées.
 2. prise en compte de la Contrainte-de-taille. Certains clients ont des incohérences de valeurs entre la taille en inch et celle en cm. Il faudra donc extraire ces clients du fichier résultat.
@@ -24,8 +24,8 @@ Test via PHPUnit -> 2/3 test unitaire.
 Ressources : Lien docs : https://ocapuozzo.github.io/mission-etl-csv/ 
 Ressource à étudier : les 2 premiers chapitres de : https://symfony.com/doc/current/service_container.html (durée : ~20mn), Vous apprendrez à créer un service (MessageGenerator) et à l’utiliser dans un contrôleur, bien suffisant pour commencer.
 
-Needed : Upload for 2 files, Download 
+*Needed* : Upload for 2 files, Download 
 
-Deuxième Partie 
+***Deuxième Partie***
  
 Voir doc mission 
