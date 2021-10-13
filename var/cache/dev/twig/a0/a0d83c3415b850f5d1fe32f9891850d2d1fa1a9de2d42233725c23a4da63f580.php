@@ -125,6 +125,6 @@ class __TwigTemplate_949c5e02d06ba180e8821e2160259a8adcdaa66b834f28f41783058fba5
 .exception-message-wrapper .container {
     min-height: unset;
 }
-", "@WebProfiler/Collector/exception.css.twig", "/Users/enzocarpentier/Documents/Cours/Informatique/Cours/Symfony/Vetux-Line/Vetux-Line/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.css.twig");
+", "@WebProfiler/Collector/exception.css.twig", "/Users/enzocarpentier/Documents/Cours/Informatique/Cours/Symfony/Vetux-line/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.css.twig");
     }
 }

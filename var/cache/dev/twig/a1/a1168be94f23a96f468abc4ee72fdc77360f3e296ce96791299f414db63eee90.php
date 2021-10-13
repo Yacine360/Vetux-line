@@ -99,6 +99,6 @@ class __TwigTemplate_a487589447d46e2bc2ae9253a4c2e2ee65f293faacee21d58c30ed22e71
 .container.body_default {
     border-top: 8px solid #aaaaaa;
 }
-", "@email/zurb_2/notification/local.css", "/Users/enzocarpentier/Documents/Cours/Informatique/Cours/Symfony/Vetux-Line/Vetux-Line/vendor/symfony/twig-bridge/Resources/views/Email/zurb_2/notification/local.css");
+", "@email/zurb_2/notification/local.css", "/Users/enzocarpentier/Documents/Cours/Informatique/Cours/Symfony/Vetux-line/vendor/symfony/twig-bridge/Resources/views/Email/zurb_2/notification/local.css");
     }
 }

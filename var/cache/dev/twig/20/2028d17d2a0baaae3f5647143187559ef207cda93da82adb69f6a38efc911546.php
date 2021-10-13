@@ -71,6 +71,6 @@ class __TwigTemplate_3fd4a04f343bd8a9abb9f28e1795636fe55e141dfcd97ed5e19bc15a1c0
     public function getSourceContext()
     {
         return new Source("{% extends \"@email/zurb_2/notification/body.txt.twig\" %}
-", "@email/default/notification/body.txt.twig", "/Users/enzocarpentier/Documents/Cours/Informatique/Cours/Symfony/Vetux-Line/Vetux-Line/vendor/symfony/twig-bridge/Resources/views/Email/default/notification/body.txt.twig");
+", "@email/default/notification/body.txt.twig", "/Users/enzocarpentier/Documents/Cours/Informatique/Cours/Symfony/Vetux-line/vendor/symfony/twig-bridge/Resources/views/Email/default/notification/body.txt.twig");
     }
 }

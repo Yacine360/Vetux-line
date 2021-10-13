@@ -1671,6 +1671,6 @@ class __TwigTemplate_af8fd44f165dfa9c7357b9d6360bd300b1f60562ee2ded5b188c86096dd
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "/Users/enzocarpentier/Documents/Cours/Informatique/Cours/Symfony/Vetux-Line/Vetux-Line/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "/Users/enzocarpentier/Documents/Cours/Informatique/Cours/Symfony/Vetux-line/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
     }
 }

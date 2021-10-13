@@ -8,6 +8,11 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-    <h1>Juste pour voir si sa fonctionne : {{ resultat }}! ✅</h1>
-    <a href="public/csvfile/resultat-data.csv" download="resultat-data.csv">Download</a>
+    <h1>
+    Juste pour voir si sa fonctionne :    
+    {% for resultat  in resultats %}
+        <p> {{ resultat }} ! ✅  </p>
+    {% endfor %}
+    </h1>
+    <a href="csvfile/resultat-data.csv" download="resultat-data.csv">Download</a>
 {% endblock %}

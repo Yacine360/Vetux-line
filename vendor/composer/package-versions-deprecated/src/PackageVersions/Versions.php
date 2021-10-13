@@ -23,7 +23,7 @@ final class Versions
      * @deprecated please use {@see self::rootPackageName()} instead.
      *             This constant will be removed in version 2.0.0.
      */
-    const ROOT_PACKAGE_NAME = 'symfony/website-skeleton';
+    const ROOT_PACKAGE_NAME = '__root__';
 
     /**
      * Array of all available composer packages.
@@ -33,7 +33,21 @@ final class Versions
      * @internal
      */
     const VERSIONS          = array (
+  'amphp/amp' => 'v2.6.1@c5fc66a78ee38d7ac9195a37bacaf940eb3f65ae',
+  'amphp/byte-stream' => 'v1.8.1@acbd8002b3536485c997c4e019206b3f10ca15bd',
+  'amphp/cache' => 'v1.5.0@2b6b5dbb70e54cc914df9952ba7c012bc4cbcd28',
+  'amphp/dns' => 'v1.2.3@852292532294d7972c729a96b49756d781f7c59d',
+  'amphp/hpack' => 'v3.1.1@cf4f1663e9fd58f60258c06177098655ca6377a5',
+  'amphp/http' => 'v1.6.3@e2b75561011a9596e4574cc867e07a706d56394b',
+  'amphp/http-client' => 'v4.6.2@453f84f623e409889168351e60246f5feddc1b3c',
+  'amphp/parser' => 'v1.0.0@f83e68f03d5b8e8e0365b8792985a7f341c57ae1',
+  'amphp/process' => 'v1.1.2@3d36327bf9b4c158cf3010f8f65c00854ec3a8b7',
+  'amphp/serialization' => 'v1.0.0@693e77b2fb0b266c3c7d622317f881de44ae94a1',
+  'amphp/socket' => 'v1.2.0@a8af9f5d0a66c5fe9567da45a51509e592788fe6',
+  'amphp/sync' => 'v1.4.0@613047ac54c025aa800a9cde5b05c3add7327ed4',
+  'amphp/windows-registry' => 'v0.3.3@0f56438b9197e224325e88f305346f0221df1f71',
   'composer/package-versions-deprecated' => '1.11.99.4@b174585d1fe49ceed21928a945138948cb394600',
+  'daverandom/libdns' => 'v2.0.2@e8b6d6593d18ac3a6a14666d8a68a4703b2e05f9',
   'doctrine/annotations' => '1.13.2@5b668aef16090008790395c02c893b1ba13f7e08',
   'doctrine/cache' => '2.1.1@331b4d5dbaeab3827976273e9356b3b453c300ce',
   'doctrine/collections' => '1.6.8@1958a744696c6bb3bb0d28db2611dc11610e78af',
@@ -52,7 +66,11 @@ final class Versions
   'doctrine/sql-formatter' => '1.1.1@56070bebac6e77230ed7d306ad13528e60732871',
   'egulias/email-validator' => '3.1.1@c81f18a3efb941d8c4d2e025f6183b5c6d697307',
   'friendsofphp/proxy-manager-lts' => 'v1.0.5@006aa5d32f887a4db4353b13b5b5095613e0611f',
+  'kelunik/certificate' => 'v1.1.2@56542e62d51533d04d0a9713261fea546bff80f6',
   'laminas/laminas-code' => '4.4.3@bb324850d09dd437b6acb142c13e64fdc725b0e1',
+  'league/uri' => '6.5.0@c68ca445abb04817d740ddd6d0b3551826ef0c5a',
+  'league/uri-interfaces' => '2.3.0@00e7e2943f76d8cb50c7dfdc2f6dee356e15e383',
+  'league/uri-parser' => '1.4.1@671548427e4c932352d9b9279fdfa345bf63fa00',
   'monolog/monolog' => '2.3.5@fd4380d6fc37626e2f799f29d91195040137eba9',
   'phpdocumentor/reflection-common' => '2.2.0@1d01c49d4ed62f25aa84a747ad35d5a16924662b',
   'phpdocumentor/reflection-docblock' => '5.2.2@069a785b2141f5bcf49f3e353548dc1cce6df556',
@@ -60,6 +78,7 @@ final class Versions
   'psr/cache' => '2.0.0@213f9dbc5b9bfbc4f8db86d2838dc968752ce13b',
   'psr/container' => '1.1.1@8622567409010282b7aeebe4bb841fe98b58dcaf',
   'psr/event-dispatcher' => '1.0.0@dbefd12671e8a14ec7f180cab83036ed26714bb0',
+  'psr/http-message' => '1.0.1@f6561bf28d520154e4b0ec72be95418abe6d9363',
   'psr/link' => '1.1.1@846c25f58a1f02b93a00f2404e3626b6bf9b7807',
   'psr/log' => '2.0.0@ef29f6d262798707a9edd554e2b82517ef3a9376',
   'sensio/framework-extra-bundle' => 'v6.2.0@3f5b6490878f8a70ba702e9692007cf979b42f0e',
@@ -163,10 +182,10 @@ final class Versions
   'symfony/phpunit-bridge' => 'v5.3.8@e9c0548d8d7abcd257f18f0adc0517895996a9c1',
   'symfony/web-profiler-bundle' => 'v5.3.8@9ba1e05fdc7a46979047ba6c8949bd35e3a386a5',
   'theseer/tokenizer' => '1.2.1@34a41e998c2183e22995f158c581e7b5e755ab9e',
-  'symfony/polyfill-ctype' => '*@',
-  'symfony/polyfill-iconv' => '*@',
-  'symfony/polyfill-php72' => '*@',
-  'symfony/website-skeleton' => 'v5.3.99@',
+  'symfony/polyfill-ctype' => '*@336c971a5f5881bb18fb74fbd2d4e0789ddc3438',
+  'symfony/polyfill-iconv' => '*@336c971a5f5881bb18fb74fbd2d4e0789ddc3438',
+  'symfony/polyfill-php72' => '*@336c971a5f5881bb18fb74fbd2d4e0789ddc3438',
+  '__root__' => 'dev-master@336c971a5f5881bb18fb74fbd2d4e0789ddc3438',
 );
 
     private function __construct()

@@ -97,6 +97,6 @@ class __TwigTemplate_1c3601596fb1b276573dc27c567cbf5e555e09b7466d90f86336d884a65
         </div>
     </div>
 </div>
-", "@WebProfiler/Profiler/header.html.twig", "/Users/enzocarpentier/Documents/Cours/Informatique/Cours/Symfony/Vetux-Line/Vetux-Line/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/header.html.twig");
+", "@WebProfiler/Profiler/header.html.twig", "/Users/enzocarpentier/Documents/Cours/Informatique/Cours/Symfony/Vetux-line/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/header.html.twig");
     }
 }
