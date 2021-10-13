@@ -9,10 +9,37 @@ use Symfony\Component\Routing\Annotation\Route;
 class AlgorithmeController extends AbstractController
 {
     #[Route('/algorithme', name: 'algorithme')]
-    public function index(): Response
+    public function algorithmeCSV(): Response
     {
-        return $this->render('FrontEnd/algo.html.twig', [
-            'controller_name' => 'AlgorithmeController',
+        $csv = [];
+        $fp = fopen();
+        if(!($fp == fopen('public/csvfile/french-data.csv', 'r'))) {
+            die('Échec de l\'ouverture du fichier');
+        }
+        while ($csv = fgetcsv($fp)) {
+            $csv[$csv[0]] = $csv;
+        }
+        fclose($fp);
+
+        if(!($fp == fopen('public/csvfile/german-data.csv', 'r'))) {
+            die('Échec de l\'ouverture du fichier');
+        }
+        while ($csv = fgetcsv($fp)) {
+            $csv[$csv[0]][] = $csv[1];
+        }
+        fclose($fp);
+
+        if(!($fp == fopen('public/csvfile/resultat-data.csv', 'w'))) {
+            die('Échec de l\'ouverture du fichier');
+        }
+
+        foreach ($csv as $cs) {
+            fputcsv($fp, $cs);
+        }
+        fclose($fp);
+
+        return $this->render('FrontEnd/resultat.html.twig', [
+            'resultat' =>  'test'
         ]);
     }
 }
