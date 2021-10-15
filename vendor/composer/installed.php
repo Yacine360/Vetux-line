@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '0f348c7dc675b7116f898edc2fe1a045125aa6a5',
+        'reference' => 'e7e4f928a45e97e327ea22b0115cde2fe36f16bc',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '0f348c7dc675b7116f898edc2fe1a045125aa6a5',
+            'reference' => 'e7e4f928a45e97e327ea22b0115cde2fe36f16bc',
             'dev_requirement' => false,
         ),
         'amphp/amp' => array(
@@ -332,6 +332,15 @@
             'install_path' => __DIR__ . '/../laminas/laminas-code',
             'aliases' => array(),
             'reference' => 'bb324850d09dd437b6acb142c13e64fdc725b0e1',
+            'dev_requirement' => false,
+        ),
+        'league/csv' => array(
+            'pretty_version' => '9.7.2',
+            'version' => '9.7.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../league/csv',
+            'aliases' => array(),
+            'reference' => '8544655c460fd01eed0ad258e514488d4b388645',
             'dev_requirement' => false,
         ),
         'league/uri' => array(

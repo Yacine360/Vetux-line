@@ -2,6 +2,10 @@
 
 namespace App\Controller\BackEnd;
 
+use ErrorException;
+use League\Csv\Exception;
+use League\Csv\Reader;
+use League\Csv\Writer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -11,50 +15,46 @@ class AlgorithmeController extends AbstractController
     #[Route('/algorithme', name: 'algorithme')]
     public function algorithmeCSV(): Response
     {
-        /// Tableau Vide
-        $csvResultat= [];
-        $csv= [];
-        $csv2= [];
+        /// A garder 
+        $tabCSV = ["Gender", "GivenName","Surname","Birthday","StreetAddress","Title","EmailAddress","TelephoneNumber","Kilograms","CCType","CCNumber","CVV2","CCExpires","Vehicle"];
+ 
+        /// Premier fichier CSV
+        $csv1 = Reader::createFromPath('./csvfile/french-data.csv', 'r');
+        $csv1->setHeaderOffset(0);
+        $header1 = $csv1->getHeader();
+        $records1 = $csv1->getRecords(); 
+        
+        /// Deuxieme fichier CSV
+        // $csv2 = Reader::createFromPath('./csvfile/french-data.csv', 'r');
+        // $csv2->setHeaderOffset(0);
+        // $header1 = $csv2 ->getHeader();
+        // $records1 = $csv2->getRecords(); 
 
-        /// Lecture des fichiers CSV
-        if(!($fp = fopen('csvfile/french-data.csv', 'r'))) {
-            die('Échec de l\'ouverture du fichier');
+        /// en cours de trie
+        function CSV1() {
+            foreach ($records1 as $record1) {
+                for ($i=0; $i<count($tabCSV);$i++) {
+                    $parm = $tabCSV[$i];
+                    $tab[$i] = $record1[$parm];
+                }
+            }
         }
 
-        if(!($fp2 = fopen('csvfile/german-data.csv', 'r'))) {
-            die('Échec de l\'ouverture du fichier');
-        }
+        CSV1();
 
-        /// Lecture + Ajout dans un Tableau des deux fichiers CSV
-        echo ("SALUT 1");
-        while ($csv == fgetcsv($fp) && $csv2 == fgetcsv($fp2)) {
-            echo 'SALUT 2';
-            $csv[$csv[0]] = $csvResultat[0];
-            $csv2[$csv2[0]] = $csvResultat[1];
-            echo ("SALUT 3");
-        }
+        // function CSV2() {
+        //     foreach ($records as $record2) {
+        //         for ($i=0; $i<count($tabName);$i++) {
+        //             $para = $tabName[$i];
+        //             $tab[$i] = $record2[$para];
+        //         }
+        //     }
+        // }
 
-        echo ("SALUT 4");
-        /// Fermeture des deux fichiers CSV
-        fclose($fp);
-        fclose($fp2);
+        $output = Writer::createFromPath('./csvfile/resultat-data.csv');
 
-        /// Ouverture du fichier Resulat 
-        if(!($fpResultat = fopen('csvfile/resultat-data.csv', 'w'))) {
-            die('Échec de l\'ouverture du fichier');
-        }
-
-        /// Ecriture du Fichier Resultat
-        foreach ((array) $csvResultat as $cs) {
-            echo ("SALUT 5");
-            fputcsv($fpResultat, (array) $cs);
-        }
-
-        /// Close Login
-        fclose($fpResultat);
-
-        return $this->render('FrontEnd/resultat.html.twig', [
-            'resultats' =>  $csvResultat
-        ]);
+        return $this->render('/FrontEnd/resultat.html.twig', array(
+            'records' => $records1
+        ));
     }
 }

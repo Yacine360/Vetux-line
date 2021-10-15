@@ -6,7 +6,10 @@
 
     {% if app.user %}
         <div class="mb-3">
-            Bienvenue {{ app.user.username }}, pour te déconnecter appuie sur <a href="{{ path('app_logout') }}">se déconnecter</a>
+            <h1> Bienvenue {{ app.user.username }} </h1>
+            <p> <a href="/algorithme"> CSV FUSION</a> </p>
+            <br>
+            <h1>pour te déconnecter appuie sur <a href="{{ path('app_logout') }}">se déconnecter</a> </h1>
         </div>
     {% endif %}
 

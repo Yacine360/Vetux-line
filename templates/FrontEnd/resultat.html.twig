@@ -8,11 +8,13 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-    <h1>
-    Juste pour voir si sa fonctionne :    
-    {% for resultat  in resultats %}
-        <p> {{ resultat }} ! ✅  </p>
+    <h1> Juste pour voir si sa fonctionne : </h1>
+    {% for resultat  in records %}
+        <p> {{ resultat.GivenName }} ! ✅  </p>
     {% endfor %}
-    </h1>
+
+    <h2> 
+        {# {{ header }}  #}
+    </h2>
     <a href="csvfile/resultat-data.csv" download="resultat-data.csv">Download</a>
 {% endblock %}

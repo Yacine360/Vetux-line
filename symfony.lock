@@ -136,6 +136,9 @@
     "laminas/laminas-code": {
         "version": "4.4.3"
     },
+    "league/csv": {
+        "version": "9.7.2"
+    },
     "league/uri": {
         "version": "6.5.0"
     },
