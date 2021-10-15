@@ -14,6 +14,11 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
+    'espaceadmin' => [[], ['_controller' => 'App\\Controller\\BackEnd\\AdminController::espaceadmin'], [], [['text', '/espaceadmin']], [], []],
     'algorithme' => [[], ['_controller' => 'App\\Controller\\BackEnd\\AlgorithmeController::algorithmeCSV'], [], [['text', '/algorithme']], [], []],
+    'app_register' => [[], ['_controller' => 'App\\Controller\\BackEnd\\RegistrationController::register'], [], [['text', '/register']], [], []],
+    'login' => [[], ['_controller' => 'App\\Controller\\BackEnd\\SecurityController::login'], [], [['text', '/login']], [], []],
+    'app_logout' => [[], ['_controller' => 'App\\Controller\\BackEnd\\SecurityController::logout'], [], [['text', '/logout']], [], []],
+    'espacemembre' => [[], ['_controller' => 'App\\Controller\\BackEnd\\UserController::espacemembre'], [], [['text', '/espacemembre']], [], []],
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], []],
 ];

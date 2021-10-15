@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Inscription{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="{{ asset("assets/register.css") }}" />
+    {% endblock %}
+</head>
+<body>
+{% block body %}
+
+    <div class="signinSection">
+        <div class="info">
+            <h2>Vetux-Line</h2>
+            <img src="assets/image/vetux-icon.png"/>
+            <p>Upload de fichier CSV & fusion</p>
+        </div>
+        <form class="signinFormulaire" method="post">
+            {{ form_start(registrationForm) }}
+            <h2>Formulaire d'inscription</h2>
+            <ul class="noBullet">
+                <li>
+                    {{ form_row(registrationForm.username, {
+                        label : 'Nom d\'utilisateur'
+                    }) }}
+                </li>
+                <li>
+                    {{ form_row(registrationForm.plainPassword, {
+                        label: 'Mot de passe'
+                    }) }}
+
+                </li>
+                <li>
+                    {{ form_row(registrationForm.agreeTerms, {
+                        label : 'Accepter les conditions d\'utilisation'
+                    }) }}
+                </li>
+                <li>
+                    <button class="formulaireInscriptionBottom" type="submit">
+                        S'inscrire
+                    </button>
+                </li>
+                <li>
+                    <h3>Vous n'êtes pas encore connecté ? <a href="{{ path('login') }}">Connectez-vous ici</a></h3>
+                </li>
+            </ul>
+            {{ form_end(registrationForm) }}
+        </form>
+    </div>
+{% endblock %}
+
+</body>
+</html>

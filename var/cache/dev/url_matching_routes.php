@@ -13,7 +13,12 @@ return [
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
+        '/espaceadmin' => [[['_route' => 'espaceadmin', '_controller' => 'App\\Controller\\BackEnd\\AdminController::espaceadmin'], null, null, null, false, false, null]],
         '/algorithme' => [[['_route' => 'algorithme', '_controller' => 'App\\Controller\\BackEnd\\AlgorithmeController::algorithmeCSV'], null, null, null, false, false, null]],
+        '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\BackEnd\\RegistrationController::register'], null, null, null, false, false, null]],
+        '/login' => [[['_route' => 'login', '_controller' => 'App\\Controller\\BackEnd\\SecurityController::login'], null, null, null, false, false, null]],
+        '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\BackEnd\\SecurityController::logout'], null, null, null, false, false, null]],
+        '/espacemembre' => [[['_route' => 'espacemembre', '_controller' => 'App\\Controller\\BackEnd\\UserController::espacemembre'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
