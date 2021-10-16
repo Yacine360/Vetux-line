@@ -20,5 +20,6 @@ return [
     'login' => [[], ['_controller' => 'App\\Controller\\BackEnd\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\BackEnd\\SecurityController::logout'], [], [['text', '/logout']], [], []],
     'espacemembre' => [[], ['_controller' => 'App\\Controller\\BackEnd\\UserController::espacemembre'], [], [['text', '/espacemembre']], [], []],
+    'index' => [[], ['_controller' => 'App\\Controller\\FrontEnd\\IndexController::index'], [], [['text', '/']], [], []],
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], []],
 ];

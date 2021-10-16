@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vetux-Line{% endblock %}
+
+{% block body %}
+
+<head>
+    <meta charset="UTF-8">
+    {% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="{{ asset("assets/index.css") }}" />
+    {% endblock %}
+</head>
+
+<body>
+    <div class="background-one">
+        <div class="link-container">
+          <a class="link-one" href="/login">Login</a>
+        </div>
+      </div>
+      <div class="background-two link-container">
+        <a class="link-two" href="/vetux">Vetux-Line </a>
+      </div>
+      <div class="background-three link-container">
+        <a class="link-three" href="/register">Register</a>
+      </div>
+</body>
+{% endblock %}

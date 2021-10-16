@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'e7e4f928a45e97e327ea22b0115cde2fe36f16bc',
+        'reference' => '75ff0d092792684efc1ecbbb51c6f30ab5fdf044',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'e7e4f928a45e97e327ea22b0115cde2fe36f16bc',
+            'reference' => '75ff0d092792684efc1ecbbb51c6f30ab5fdf044',
             'dev_requirement' => false,
         ),
         'amphp/amp' => array(
