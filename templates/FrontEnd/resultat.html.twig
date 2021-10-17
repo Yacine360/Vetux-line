@@ -9,12 +9,12 @@
 </style>
 
     <h1> Juste pour voir si sa fonctionne : </h1>
-    {% for resultat  in records %}
+    {% for resultat  in merge %}
         <p> {{ resultat.GivenName }} ! ✅  </p>
     {% endfor %}
 
     <h2> 
         {# {{ header }}  #}
     </h2>
-    <a href="csvfile/resultat-data.csv" download="resultat-data.csv">Download</a>
+    <a href="resultat-data.csv" download="resultat-data.csv">Download</a>
 {% endblock %}

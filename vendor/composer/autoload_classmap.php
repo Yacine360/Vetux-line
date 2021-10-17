@@ -245,6 +245,7 @@ return array(
     'App\\Controller\\BackEnd\\RegistrationController' => $baseDir . '/src/Controller/BackEnd/RegistrationController.php',
     'App\\Controller\\BackEnd\\SecurityController' => $baseDir . '/src/Controller/BackEnd/SecurityController.php',
     'App\\Controller\\BackEnd\\UserController' => $baseDir . '/src/Controller/BackEnd/UserController.php',
+    'App\\Controller\\FrontEnd\\IndexController' => $baseDir . '/src/Controller/FrontEnd/IndexController.php',
     'App\\Entity\\User' => $baseDir . '/src/Entity/User.php',
     'App\\Form\\RegistrationFormType' => $baseDir . '/src/Form/RegistrationFormType.php',
     'App\\Kernel' => $baseDir . '/src/Kernel.php',

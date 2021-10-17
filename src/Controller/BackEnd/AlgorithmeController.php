@@ -13,6 +13,36 @@ use Symfony\Component\Routing\Annotation\Route;
 class AlgorithmeController extends AbstractController
 {
     #[Route('/algorithme', name: 'algorithme')]
+    public function algorithmeCSV()
+    {
+        //Nom du répertoire contenant tous les fichiers à fusionner
+        $Dir = "csvfile";
+
+        //Nom du fichier de sortie
+        $OutputFile = "resultat-data.csv";
+
+        //Scan les fichiers du répertoire dans un tableau
+        $Files = scandir ($Dir);
+
+        //Créer un flux dans le fichier de sortie
+        $Open = fopen ($OutputFile, "w"); //Utilisez "w" pour démarrer un nouveau fichier de sortie à partir de zéro. Si vous souhaitez incrémenter un fichier existant, utilisez "a".
+
+        // Parcourez les fichiers, lisez leur contenu dans une variable de chaîne et écrivez-le dans le flux de fichiers. Ensuite, nettoyez la variable.
+        foreach ($Files as $k => $v) {
+            if ($v != "." AND $v != "..") {
+                $Data = file_get_contents ($Dir."/".$v);
+                fwrite ($Open, $Data);
+            }
+            unset ($Data);
+        }
+
+        //Ferme le flux de fichiers
+        fclose ($Open);
+        return $this->render('/FrontEnd/resultat.html.twig', array(
+            'merge' => $OutputFile
+        ));
+    }
+    /**#[Route('/algorithme', name: 'algorithme')]
     public function algorithmeCSV(): Response
     {
         /// A garder 
@@ -56,5 +86,5 @@ class AlgorithmeController extends AbstractController
         return $this->render('/FrontEnd/resultat.html.twig', array(
             'records' => $records1
         ));
-    }
+    }*/
 }

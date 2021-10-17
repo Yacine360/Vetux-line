@@ -932,6 +932,7 @@ class ComposerStaticInit537de89e240d0345c0552102de724550
         'App\\Controller\\BackEnd\\RegistrationController' => __DIR__ . '/../..' . '/src/Controller/BackEnd/RegistrationController.php',
         'App\\Controller\\BackEnd\\SecurityController' => __DIR__ . '/../..' . '/src/Controller/BackEnd/SecurityController.php',
         'App\\Controller\\BackEnd\\UserController' => __DIR__ . '/../..' . '/src/Controller/BackEnd/UserController.php',
+        'App\\Controller\\FrontEnd\\IndexController' => __DIR__ . '/../..' . '/src/Controller/FrontEnd/IndexController.php',
         'App\\Entity\\User' => __DIR__ . '/../..' . '/src/Entity/User.php',
         'App\\Form\\RegistrationFormType' => __DIR__ . '/../..' . '/src/Form/RegistrationFormType.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
