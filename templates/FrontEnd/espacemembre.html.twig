@@ -3,14 +3,31 @@
 {% block title %}Espace Membre{% endblock %}
 
 {% block body %}
-
-    {% if app.user %}
-        <div class="mb-3">
-            <h1> Bienvenue {{ app.user.username }} </h1>
-            <p> <a href="/algorithme"> CSV FUSION</a> </p>
-            <br>
-            <h1>pour te déconnecter appuie sur <a href="{{ path('app_logout') }}">se déconnecter</a> </h1>
-        </div>
-    {% endif %}
-
+<body> 
+<!-- Theme CSS -->
+<link rel="stylesheet" href="css/style.css">
+{% if app.user %}
+{# <div class="background"> </div> #}
+<img src="img/slider-bg.jpg" style="text-align: center;" id="bg" alt="">
+	<section id="text-carousel-intro-section" class="parallax">
+		    <div class="container">
+        <div class="caption text-center text-white" data-stellar-ratio="0.7">
+            <div class="item">
+                <h1> Bienvenue {{ app.user.username }}</h1>
+                <br> <br>
+                <p>Fusionnez vos deux fichiers CSV est devenu facile avec Vetux-Line</p>
+                <br> <br>
+                <a class="btn btn-blank" href="" role="button">Upload</a>&nbsp;&nbsp;&nbsp;<a class="btn btn-blank" href="{{ path('app_logout') }}" role="button">Deconnexion</a>
+            </div>
+        </div> <!-- /.caption -->
+    </div> <!-- /.container -->
+</section>
+{# <div class="mb-3">
+    <h1> Bienvenue {{ app.user.username }} </h1>
+    <p> <a href="/algorithme"> CSV FUSION</a> </p>
+    <br>
+    <h1>pour te déconnecter appuie sur <a href="{{ path('app_logout') }}">se déconnecter</a> </h1>
+</div> #}
+{% endif %}
+</body>
 {% endblock %}

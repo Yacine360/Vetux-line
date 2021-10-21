@@ -16,8 +16,7 @@
             <img src="assets/image/vetux-icon.png"/>
             <p>Upload de fichier CSV & fusion</p>
         </div>
-        <form class="signinFormulaire" method="post">
-            {{ form_start(registrationForm) }}
+        {{ form_start(registrationForm, {'method': 'post', 'action': 'attr': {'class': 'signinFormulaire form-control'}}) }}
             <h2>Formulaire d'inscription</h2>
             <ul class="noBullet">
                 <li>
@@ -27,17 +26,12 @@
                 </li>
                 <li>
                     {{ form_row(registrationForm.plainPassword, {
+                        class: "form-control",
                         label: 'Mot de passe'
                     }) }}
-
                 </li>
                 <li>
-                    {{ form_row(registrationForm.agreeTerms, {
-                        label : 'Accepter les conditions d\'utilisation'
-                    }) }}
-                </li>
-                <li>
-                    <button class="formulaireInscriptionBottom" type="submit">
+                    <button class="form-control formulaireInscriptionBottom" type="submit">
                         S'inscrire
                     </button>
                 </li>
@@ -46,7 +40,6 @@
                 </li>
             </ul>
             {{ form_end(registrationForm) }}
-        </form>
     </div>
 {% endblock %}
 
