@@ -60,7 +60,7 @@ class __TwigTemplate_91c7464960e53e0279a8db497dc9b24bb1c238aa0843d99641d9341db1f
 ";
         // line 11
         $this->displayBlock('body', $context, $blocks);
-        // line 52
+        // line 51
         echo "
 </body>
 </html>";
@@ -152,15 +152,14 @@ class __TwigTemplate_91c7464960e53e0279a8db497dc9b24bb1c238aa0843d99641d9341db1f
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 29, $this->source); })()), "plainPassword", [], "any", false, false, false, 29), 'row', ["label" => "Mot de passe"]);
         // line 31
         echo "
-
                 </li>
-                <li>
+                <!--<li>
                     ";
-        // line 35
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 35, $this->source); })()), "agreeTerms", [], "any", false, false, false, 35), 'row', ["label" => "Accepter les conditions d'utilisation"]);
-        // line 37
+        // line 34
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 34, $this->source); })()), "agreeTerms", [], "any", false, false, false, 34), 'row', ["label" => "Accepter les conditions d'utilisation"]);
+        // line 36
         echo "
-                </li>
+                </li>-->
                 <li>
                     <button class=\"formulaireInscriptionBottom\" type=\"submit\">
                         S'inscrire
@@ -168,14 +167,14 @@ class __TwigTemplate_91c7464960e53e0279a8db497dc9b24bb1c238aa0843d99641d9341db1f
                 </li>
                 <li>
                     <h3>Vous n'êtes pas encore connecté ? <a href=\"";
-        // line 45
+        // line 44
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
         echo "\">Connectez-vous ici</a></h3>
                 </li>
             </ul>
             ";
-        // line 48
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 48, $this->source); })()), 'form_end');
+        // line 47
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 47, $this->source); })()), 'form_end');
         echo "
         </form>
     </div>
@@ -195,7 +194,7 @@ class __TwigTemplate_91c7464960e53e0279a8db497dc9b24bb1c238aa0843d99641d9341db1f
 
     public function getDebugInfo()
     {
-        return array (  178 => 48,  172 => 45,  162 => 37,  160 => 35,  154 => 31,  152 => 29,  147 => 26,  145 => 24,  138 => 20,  128 => 12,  118 => 11,  105 => 7,  95 => 6,  76 => 5,  64 => 52,  62 => 11,  58 => 9,  56 => 6,  52 => 5,  46 => 1,);
+        return array (  177 => 47,  171 => 44,  161 => 36,  159 => 34,  154 => 31,  152 => 29,  147 => 26,  145 => 24,  138 => 20,  128 => 12,  118 => 11,  105 => 7,  95 => 6,  76 => 5,  64 => 51,  62 => 11,  58 => 9,  56 => 6,  52 => 5,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -231,13 +230,12 @@ class __TwigTemplate_91c7464960e53e0279a8db497dc9b24bb1c238aa0843d99641d9341db1f
                     {{ form_row(registrationForm.plainPassword, {
                         label: 'Mot de passe'
                     }) }}
-
                 </li>
-                <li>
+                <!--<li>
                     {{ form_row(registrationForm.agreeTerms, {
                         label : 'Accepter les conditions d\\'utilisation'
                     }) }}
-                </li>
+                </li>-->
                 <li>
                     <button class=\"formulaireInscriptionBottom\" type=\"submit\">
                         S'inscrire

@@ -85,27 +85,69 @@ class __TwigTemplate_bfc8d137011c01ff550ef4d54daaaaf2c1400c08648456fec5b6ef392e9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "
-    ";
-        // line 7
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 7, $this->source); })()), "user", [], "any", false, false, false, 7)) {
-            // line 8
-            echo "        <div class=\"mb-3\">
-            <h1> Bienvenue ";
-            // line 9
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 9, $this->source); })()), "user", [], "any", false, false, false, 9), "username", [], "any", false, false, false, 9), "html", null, true);
-            echo " </h1>
-            <p> <a href=\"/algorithme\"> CSV FUSION</a> </p>
-            <br>
-            <h1>pour te déconnecter appuie sur <a href=\"";
-            // line 12
+        echo "<body> 
+<!-- Theme CSS -->
+<link rel=\"stylesheet\" href=\"css/style.css\">
+";
+        // line 9
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 9, $this->source); })()), "user", [], "any", false, false, false, 9)) {
+            // line 11
+            echo "<img src=\"img/slider-bg.jpg\" style=\"text-align: center;\" id=\"bg\" alt=\"\">
+\t<section id=\"text-carousel-intro-section\" class=\"parallax\">
+\t\t    <div class=\"container\">
+        <div class=\"caption text-center text-white\" data-stellar-ratio=\"0.7\">
+            <div class=\"item\">
+                <h1> Bienvenue ";
+            // line 16
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 16, $this->source); })()), "user", [], "any", false, false, false, 16), "username", [], "any", false, false, false, 16), "html", null, true);
+            echo "</h1>
+                <br> <br>
+                <p>Fusionnez vos deux fichiers CSV est devenu facile avec Vetux-Line</p>
+                <br> <br>
+                ";
+            // line 20
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 20, $this->source); })()), 'form_start', ["attr" => ["accept-charset" => "utf-8"]]);
+            echo "
+                <div class=\"form-group\">
+                    ";
+            // line 22
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 22, $this->source); })()), "upload_file", [], "any", false, false, false, 22), 'label');
+            echo "
+                    ";
+            // line 23
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 23, $this->source); })()), "upload_file", [], "any", false, false, false, 23), 'widget');
+            echo "
+                    ";
+            // line 24
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), "upload_file", [], "any", false, false, false, 24), 'errors');
+            echo "
+                </div>
+                <div class=\"form-group\">
+                    ";
+            // line 27
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 27, $this->source); })()), "send", [], "any", false, false, false, 27), 'widget', ["label" => "Upload this file", "attr" => ["class" => "btn btn-blank"]]);
+            echo "
+                </div>
+                    ";
+            // line 29
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 29, $this->source); })()), 'rest');
+            echo "
+                ";
+            // line 30
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 30, $this->source); })()), 'form_end');
+            echo "
+                &nbsp;&nbsp;&nbsp;<a class=\"btn btn-blank\" href=\"";
+            // line 31
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            echo "\">se déconnecter</a> </h1>
-        </div>
-    ";
+            echo "\" role=\"button\">Deconnexion</a>
+            </div>
+        </div> <!-- /.caption -->
+    </div> <!-- /.container -->
+</section>
+";
         }
-        // line 15
-        echo "
+        // line 43
+        echo "</body>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -127,7 +169,7 @@ class __TwigTemplate_bfc8d137011c01ff550ef4d54daaaaf2c1400c08648456fec5b6ef392e9
 
     public function getDebugInfo()
     {
-        return array (  108 => 15,  102 => 12,  96 => 9,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  150 => 43,  141 => 31,  137 => 30,  133 => 29,  128 => 27,  122 => 24,  118 => 23,  114 => 22,  109 => 20,  102 => 16,  95 => 11,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -137,16 +179,44 @@ class __TwigTemplate_bfc8d137011c01ff550ef4d54daaaaf2c1400c08648456fec5b6ef392e9
 {% block title %}Espace Membre{% endblock %}
 
 {% block body %}
-
-    {% if app.user %}
-        <div class=\"mb-3\">
-            <h1> Bienvenue {{ app.user.username }} </h1>
-            <p> <a href=\"/algorithme\"> CSV FUSION</a> </p>
-            <br>
-            <h1>pour te déconnecter appuie sur <a href=\"{{ path('app_logout') }}\">se déconnecter</a> </h1>
-        </div>
-    {% endif %}
-
+<body> 
+<!-- Theme CSS -->
+<link rel=\"stylesheet\" href=\"css/style.css\">
+{% if app.user %}
+{# <div class=\"background\"> </div> #}
+<img src=\"img/slider-bg.jpg\" style=\"text-align: center;\" id=\"bg\" alt=\"\">
+\t<section id=\"text-carousel-intro-section\" class=\"parallax\">
+\t\t    <div class=\"container\">
+        <div class=\"caption text-center text-white\" data-stellar-ratio=\"0.7\">
+            <div class=\"item\">
+                <h1> Bienvenue {{ app.user.username }}</h1>
+                <br> <br>
+                <p>Fusionnez vos deux fichiers CSV est devenu facile avec Vetux-Line</p>
+                <br> <br>
+                {{ form_start(form, { attr: { 'accept-charset' : 'utf-8' }}) }}
+                <div class=\"form-group\">
+                    {{ form_label(form.upload_file) }}
+                    {{ form_widget(form.upload_file) }}
+                    {{ form_errors(form.upload_file) }}
+                </div>
+                <div class=\"form-group\">
+                    {{ form_widget(form.send, {'label': \"Upload this file\", 'attr' : { 'class': 'btn btn-blank' }}) }}
+                </div>
+                    {{ form_rest(form) }}
+                {{ form_end(form) }}
+                &nbsp;&nbsp;&nbsp;<a class=\"btn btn-blank\" href=\"{{ path('app_logout') }}\" role=\"button\">Deconnexion</a>
+            </div>
+        </div> <!-- /.caption -->
+    </div> <!-- /.container -->
+</section>
+{# <div class=\"mb-3\">
+    <h1> Bienvenue {{ app.user.username }} </h1>
+    <p> <a href=\"/algorithme\"> CSV FUSION</a> </p>
+    <br>
+    <h1>pour te déconnecter appuie sur <a href=\"{{ path('app_logout') }}\">se déconnecter</a> </h1>
+</div> #}
+{% endif %}
+</body>
 {% endblock %}", "FrontEnd/espacemembre.html.twig", "C:\\Users\\bonif\\Desktop\\Projets\\LYCEE\\symfony\\Vetux-line\\templates\\FrontEnd\\espacemembre.html.twig");
     }
 }

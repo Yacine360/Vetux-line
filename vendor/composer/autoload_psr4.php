@@ -93,7 +93,6 @@ return array(
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'LibDNS\\' => array($vendorDir . '/daverandom/libdns/src'),
     'League\\Uri\\' => array($vendorDir . '/league/uri/src', $vendorDir . '/league/uri-interfaces/src', $vendorDir . '/league/uri-parser/src'),
-    'League\\Csv\\' => array($vendorDir . '/league/csv/src'),
     'Laminas\\Code\\' => array($vendorDir . '/laminas/laminas-code/src'),
     'Kelunik\\Certificate\\' => array($vendorDir . '/kelunik/certificate/lib'),
     'Egulias\\EmailValidator\\' => array($vendorDir . '/egulias/email-validator/src'),

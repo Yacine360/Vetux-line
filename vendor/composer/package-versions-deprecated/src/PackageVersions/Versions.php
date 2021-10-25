@@ -68,7 +68,6 @@ final class Versions
   'friendsofphp/proxy-manager-lts' => 'v1.0.5@006aa5d32f887a4db4353b13b5b5095613e0611f',
   'kelunik/certificate' => 'v1.1.2@56542e62d51533d04d0a9713261fea546bff80f6',
   'laminas/laminas-code' => '4.4.3@bb324850d09dd437b6acb142c13e64fdc725b0e1',
-  'league/csv' => '9.7.2@8544655c460fd01eed0ad258e514488d4b388645',
   'league/uri' => '6.5.0@c68ca445abb04817d740ddd6d0b3551826ef0c5a',
   'league/uri-interfaces' => '2.3.0@00e7e2943f76d8cb50c7dfdc2f6dee356e15e383',
   'league/uri-parser' => '1.4.1@671548427e4c932352d9b9279fdfa345bf63fa00',
@@ -185,10 +184,10 @@ final class Versions
   'symfony/phpunit-bridge' => 'v5.3.8@e9c0548d8d7abcd257f18f0adc0517895996a9c1',
   'symfony/web-profiler-bundle' => 'v5.3.8@9ba1e05fdc7a46979047ba6c8949bd35e3a386a5',
   'theseer/tokenizer' => '1.2.1@34a41e998c2183e22995f158c581e7b5e755ab9e',
-  'symfony/polyfill-ctype' => '*@9a775b8dc50a649339e0f102efa3645ff51eff7c',
-  'symfony/polyfill-iconv' => '*@9a775b8dc50a649339e0f102efa3645ff51eff7c',
-  'symfony/polyfill-php72' => '*@9a775b8dc50a649339e0f102efa3645ff51eff7c',
-  '__root__' => 'dev-master@9a775b8dc50a649339e0f102efa3645ff51eff7c',
+  'symfony/polyfill-ctype' => '*@95610eb3c3faa2057c207d03c714a9aa3e0a2536',
+  'symfony/polyfill-iconv' => '*@95610eb3c3faa2057c207d03c714a9aa3e0a2536',
+  'symfony/polyfill-php72' => '*@95610eb3c3faa2057c207d03c714a9aa3e0a2536',
+  '__root__' => 'dev-master@95610eb3c3faa2057c207d03c714a9aa3e0a2536',
 );
 
     private function __construct()
