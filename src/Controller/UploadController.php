@@ -17,6 +17,7 @@ class UploadController
     if ($form->isSubmitted() && $form->isValid()) 
     {
       $file = $form['upload_file']->getData();
+      
       if ($file) 
       {
         $file_name = $file_uploader->upload($file);

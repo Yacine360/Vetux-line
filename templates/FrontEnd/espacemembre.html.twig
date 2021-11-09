@@ -17,17 +17,17 @@
                 <br> <br>
                 <p>Fusionnez vos deux fichiers CSV est devenu facile avec Vetux-Line</p>
                 <br> <br>
-                {{ form_start(form, { attr: { 'accept-charset' : 'utf-8' }}) }}
-                <div class="form-group">
-                    {{ form_label(form.upload_file) }}
+              
+                {# <div class="form-group">
+                    {# {{ form_label(form.upload_file) }}
                     {{ form_widget(form.upload_file) }}
-                    {{ form_errors(form.upload_file) }}
+                    {{ form_errors(form.upload_file) }} #}
                 </div>
                 <div class="form-group">
-                    {{ form_widget(form.send, {'label': "Upload this file", 'attr' : { 'class': 'btn btn-blank' }}) }}
+                    {# {{ form_widget(form.send, {'label': "Upload this file", 'attr' : { 'class': 'btn btn-blank' }}) }} #}
                 </div>
-                    {{ form_rest(form) }}
-                {{ form_end(form) }}
+                    {# {{ form_rest(form) }} #} 
+     
                 &nbsp;&nbsp;&nbsp;<a class="btn btn-blank" href="{{ path('app_logout') }}" role="button">Deconnexion</a>
             </div>
         </div> <!-- /.caption -->
