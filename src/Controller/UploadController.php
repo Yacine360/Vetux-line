@@ -2,40 +2,103 @@
 
 namespace App\Controller;
 
+use App\Services\FileUploader;
+use App\Services\Fusion;
+use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-use App\Service\FileUploader;
-use App\Form\FileUploadType;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
-class UploadController  
+class UploadController extends AbstractController
 {
-  #[Route('/upload', name: 'upload')]
-  public function excelCommunesAction(Request $request, FileUploader $file_uploader)
-  {
-    $form = $this->createForm(FileUploadType::class);
-    $form->handleRequest($request);
-    if ($form->isSubmitted() && $form->isValid()) 
+    /**
+     * @Route("/uploadFile", name="uploadFile")
+     * @param Request $request
+     * @param string $uploadDir
+     * @param FileUploader $uploader
+     * @return Response
+     */
+    public function indexUpload(Request $request, string $uploadDir,
+                                FileUploader $uploader, LoggerInterface $logger): Response
     {
-      $file = $form['upload_file']->getData();
-      
-      if ($file) 
-      {
-        $file_name = $file_uploader->upload($file);
-        if (null !== $file_name) // for example
+        $this->denyAccessUnlessGranted('ROLE_GESTIONNAIRE', null, "Vous n'avez pas la permission pour accéder à cette page.");
+
+        $token = $request->get("token");
+
+        if (!$this->isCsrfTokenValid('upload', $token))
         {
-          $directory = $file_uploader->getTargetDirectory();
-          $full_path = $directory.'/'.$file_name;
-          // Do what you want with the full path file...
-          // Why not read the content or parse it !!!
+            $logger->info("CSRF failure");
+
+            return new Response("Opération non autorisée",  Response::HTTP_BAD_REQUEST,
+                ['content-type' => 'text/plain']);
         }
-        else
+
+        $files = $request->files->get('csvFileUpload');
+
+        if (empty($files))
         {
-          // Oups, an error occured !!!
+
+            $this->addFlash('notice', 'Aucun fichier n\'a été spécifié');
+            return $this->render('/FrontEnd/espace/gestionnaire.html.twig');
+
         }
-      }
+
+        foreach ($files as $file)
+        {
+            $filetype = $file->getMimeType();
+            if (str_contains($filetype, '/csv')){
+                $filename = $file->getClientOriginalName();
+                $uploader->upload($uploadDir, $file, $filename);
+            }
+            else {
+                return $this->render('/FrontEnd/espace/gestionnaire.html.twig');
+            }
+        }
+        $this->addFlash('notice', 'Fichiers téléchargés');
+        return $this->render('/FrontEnd/Fusion/fusion.html.twig');
     }
-    return $this->render('FrontEnd/espacemembre.html.twig', [
-      'form' => $form->createView(),
-    ]);
-  }
+
+    /**
+     * @Route("/fusion", name="fusion")
+     */
+    public function fusion(Fusion $fusionServices)
+    {
+        $this->denyAccessUnlessGranted('ROLE_GESTIONNAIRE', null, "Vous n'avez pas la permission pour accéder à cette page.");
+
+        $fusion = $fusionServices->fusionServices();
+        $notAccepted = $fusion[1];
+        $fusion = $fusion[0];
+        $fichiers = fopen($fusion, 'r');
+        $f = 0;
+        $g = 0;
+        $total = 0;
+        if ($fichiers){
+            $line = fgetcsv($fichiers, 1000, ",");
+            $line = fgetcsv($fichiers, 1000, ",");
+            while ($line) {
+                if (in_array("France", $line)){
+                    $f++;
+                } else{
+                    $g++;
+                }
+                $line = fgetcsv($fichiers, 1000, ",");
+            }
+        }
+        fclose($fichiers);
+        $total = $f + $g;
+        return $this->render('/FrontEnd/Fusion/DownloadFusion/sequentieldl.html.twig', array('f' => $f, 'g' => $g, 'total' => $total, 'notAccepted' => $notAccepted));
+    }
+
+    /**
+     * @Route("/fusiondl", name="fusiondl")
+     */
+    public function fusionDL(Fusion $fusionServices){
+        $this->denyAccessUnlessGranted('ROLE_GESTIONNAIRE', null, "Vous n'avez pas la permission pour accéder à cette page.");
+
+        $fusion = $fusionServices->fusionServices();
+        $fusion = $fusion[0];
+
+        return $this->file($fusion);
+    }
 }

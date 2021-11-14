@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+            <meta charset="UTF-8">
+            {# Run `composer require symfony/webpack-encore-bundle`
+            and uncomment the following Encore helpers to start using Symfony UX #}
+            {% block stylesheets %}
+                <link rel="stylesheet" type="text/css" href="{{ asset("assets/css/registration.css") }}" />
+            {% endblock %}
+            <title>{% block title %}Vetux-Line{% endblock %} - Inscription</title>
+
+            {% block javascripts %}
+                {#{{ encore_entry_script_tags('app') }}#}
+            {% endblock %}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+            <div class="signupSection">
+                <div class="info">
+                    <h2>Vetux-Line</h2>
+                    <img src="{{ asset("assets/images/logo.png") }}", width="200" height="200"/>
+                    <p>Créateur de ligne de vêtements</p>
+                </div>
+                <form class="signupFormulaire" method="post">
+                    {{ form_start(form) }}
+                    <h2>Formulaire d'inscription</h2>
+                    <ul class="noBullet">
+                        <li>
+                            {{ form_label(form.username, 'Nom d\'utilisateur', { 'label_attr': {'class': 'label'}}) }}
+                            <br>
+                            {{ form_widget(form.username, {'attr': {'class': 'input'}}) }}
+                        </li>
+                        <li>
+                            {{ form_label(form.email, 'Adresse e-mail', {'label_attr': {'class': 'label'}}) }}
+                            <br>
+                            {{ form_widget(form.email, {'attr': {'class': 'input'}}) }}
+                        </li>
+                        <li>
+                            {{ form_label(form.password, 'Mot de passe', {'label_attr': {'class': 'label'}}) }}
+                            <br>
+                            {{ form_widget(form.password, {'attr': {'class': 'input'}}) }}
+                        </li>
+                        <li>
+                            {{ form_label(form.confirm_password, 'Confirmation du mot de passe', {'label_attr': {'class': 'label'}}) }}
+                            <br>
+                            {{ form_widget(form.confirm_password, {'attr': {'class': 'input'}}) }}
+                        </li>
+                        <li>
+                            <button class="formulaireInscriptionBottom" type="submit">
+                                S'inscrire
+                            </button>
+                        </li>
+                        <br>
+                        <li>
+                        {{ form_errors(form.username, {'attr': {'class': 'errorMessage'}}) }}
+                        {{ form_errors(form.email, {'attr': {'class': 'errorMessage'}}) }}
+                        {{ form_errors(form.password, {'attr': {'class': 'errorMessage'}}) }}
+                        {{ form_errors(form.confirm_password, {'attr': {'class': 'errorMessage'}}) }}
+                        </li>
+                        <li>
+                            <h3>Vous n'êtes pas encore connecté ? <a href="{{ path('security_login') }}">Identifiez-vous ici</a></h3>
+                        </li>
+                    </ul>
+                    {{ form_end(form) }}
+                </form>
+            </div>
+        {% endblock %}
+    </body>
+</html>

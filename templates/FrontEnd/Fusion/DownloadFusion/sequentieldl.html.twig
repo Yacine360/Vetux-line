@@ -1,0 +1,59 @@
+{% if is_granted('ROLE_GESTIONNAIRE') %}
+    <!DOCTYPE html>
+    <html>
+    <head>
+        {% block head %}
+            <meta charset="UTF-8">
+            {% block stylesheets %}
+                <link rel="stylesheet" type="text/css" href="{{ asset("assets/css/fusiondl.css") }}" />
+            {% endblock %}
+            <title>{% block title %}Vetux-Line{% endblock %} - Fusion</title>
+        {% endblock %}
+    </head>
+    <body>
+    {% block body %}
+        <header>
+            <div class="wrapper">
+                <div class="logo">
+                    <img src="{{ asset("assets/images/logo.png") }}" alt="">
+                </div>
+                <ul class="nav-area">
+                    <li><a href="{{ path('home') }}">Accueil</a></li>
+                    {% if is_granted('ROLE_GESTIONNAIRE') %}
+                        <li><a href="{{ path('gestionnaire') }}">Espace Gestionnaires</a></li>
+                    {% endif %}
+                    {% if is_granted('ROLE_GESTIONNAIRE') %}
+                        <li><a href="{{ path('fusionpage') }}">Espace Fusionnage</a></li>
+                    {% endif %}
+                    {% if app.user %}
+                        <li><a href="{{ path('security_logout') }}">Déconnexion</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="content">
+                <h1>Bienvenue sur la page de téléchargement de la fusion !</h1>
+                <br>
+                <h2>Commencer à télécharger votre fusion !</h2>
+                <br><br>
+                    <a class="textStyle" href="{{ path('fusiondl', relative = false) }}"><label class="labelStyle">Télécharger la fusion</label></a>
+                <br><br>
+
+                {% if f is defined %}
+                    <span class="infoFileFusion">nombre de français: {{ f }}</span>
+                {% endif %}
+                {% if g is defined %}
+                    <span class="infoFileFusion">nombre d'allemands: {{ g }}</span>
+                {% endif %}
+                <br><br>
+                {% if total is defined %}
+                    <span class="infoFileFusion">nombre de clients acceptés: {{ total }}</span>
+                {% endif %}
+                {% if notAccepted is defined %}
+                    <span class="infoFileFusion">nombre de clients rejetés: {{ notAccepted }}</span>
+                {% endif %}
+            </div>
+        </header>
+    {% endblock %}
+    </body>
+    </html>
+{% endif %}

@@ -1,0 +1,41 @@
+{% if is_granted('ROLE_GESTIONNAIRE') %}
+    <!DOCTYPE html>
+    <html>
+    <head>
+        {% block head %}
+            <meta charset="UTF-8">
+            {% block stylesheets %}
+                <link rel="stylesheet" type="text/css" href="{{ asset("assets/css/fusionpage.css") }}" />
+            {% endblock %}
+            <title>{% block title %}Vetux-Line{% endblock %} - Espace Fusionnage</title>
+        {% endblock %}
+    </head>
+    <body>
+    {% block body %}
+        <header>
+            <div class="wrapper">
+                <div class="logo">
+                    <img src="{{ asset("assets/images/logo.png") }}" alt="">
+                </div>
+                <ul class="nav-area">
+                    <li><a href="{{ path('home') }}">Accueil</a></li>
+                    {% if is_granted('ROLE_GESTIONNAIRE') %}
+                        <li><a href="{{ path('gestionnaire') }}">Espace Gestionnaires</a></li>
+                    {% endif %}
+                    {% if app.user %}
+                        <li><a href="{{ path('security_logout') }}">Déconnexion</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="content">
+                <h1>Bienvenue sur la page de fusion !</h1>
+                <br>
+                <h2>Commencer à fusionner vos fichiers CSV !</h2>
+                <br><br>
+                    <a class="textStyle" href="{{ path('fusion', relative = false) }}"><label class="labelStyle">Effectuer une fusion</label></a>
+            </div>
+        </header>
+    {% endblock %}
+    </body>
+    </html>
+{% endif %}

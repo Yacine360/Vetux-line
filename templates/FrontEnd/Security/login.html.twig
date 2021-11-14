@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+            <meta charset="UTF-8">
+            {# Run `composer require symfony/webpack-encore-bundle`
+            and uncomment the following Encore helpers to start using Symfony UX #}
+            {% block stylesheets %}
+                <link rel="stylesheet" type="text/css" href="{{ asset("assets/css/login.css") }}" />
+            {% endblock %}
+            <title>{% block title %}Vetux-Line{% endblock %} - Identification</title>
+
+            {% block javascripts %}
+                {#{{ encore_entry_script_tags('app') }}#}
+            {% endblock %}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+            <div class="signinSection">
+                <div class="info">
+                    <h2>Vetux-Line</h2>
+                    <img src="{{ asset("assets/images/logo.png") }}", width="200" height="200"/>
+                    <p>Créateur de ligne de vêtements</p>
+                </div>
+                <form class="signinFormulaire" action="{{ path('security_login') }}" method="post">
+                    <h2>Formulaire d'identification</h2>
+                    <ul class="noBullet">
+                        <li>
+                            <label class="label" for="inputUsername">Adresse mail</label><br>
+                            <input class="input" type="text" required name="_username" class="form-control" required autofocus>
+                        </li>
+                        <li>
+                            <label class="label" for="inputPassword">Mot de passe</label><br>
+                            <input class="input" type="password" required name="_password" class="form-control" required autofocus>
+                        </li>
+                        <li>
+                            <button class="formulaireIdentificationBottom" type="submit">
+                                S'identifier
+                            </button>
+                        </li>
+                        <li>
+                            <h3>Vous n'êtes pas encore inscrit ? <a href="{{ path('security_inscription') }}">Inscrivez-vous ici</a></h3>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        {% endblock %}
+    </body>
+</html>

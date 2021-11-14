@@ -1,27 +1,48 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+            <meta charset="UTF-8">
+            {# Run `composer require symfony/webpack-encore-bundle`
+            and uncomment the following Encore helpers to start using Symfony UX #}
+            {% block stylesheets %}
+                <link rel="stylesheet" type="text/css" href="{{ asset("assets/css/index.css") }}" />
+            {% endblock %}
+            <title>{% block title %}Vetux-Line{% endblock %} - Accueil</title>
 
-{% block title %}Vetux-Line{% endblock %}
-
-{% block body %}
-
-<head>
-    <meta charset="UTF-8">
-    {% block stylesheets %}
-        <link rel="stylesheet" type="text/css" href="{{ asset("assets/index.css") }}" />
-    {% endblock %}
-</head>
-
-<body>
-    <div class="background-one">
-        <div class="link-container">
-          <a class="link-one" href="/login">Login</a>
-        </div>
-      </div>
-      <div class="background-two link-container">
-        <h1 class="link-three">Vetux-Line </h1>
-      </div>
-      <div class="background-three link-container">
-        <a class="link-one" href="/register">Register</a>
-      </div>
-</body>
-{% endblock %}
+            {% block javascripts %}
+                {#{{ encore_entry_script_tags('app') }}#}
+            {% endblock %}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+            <header>
+                <div class="wrapper">
+                    <div class="logo">
+                        <img src="{{ asset("assets/images/logo.png") }}" alt="">
+                    </div>
+                    <ul class="nav-area">
+                        {% if is_granted('ROLE_GESTIONNAIRE') %}
+                            <li><a href="{{ path('gestionnaire') }}">Espace Gestionnaires</a></li>
+                        {% endif %}
+                        {% if not app.user %}
+                            <li><a href="{{ path('security_login') }}">Identification</a></li>
+                            <li><a href="{{ path('security_inscription') }}">Inscription</a></li>
+                        {% endif %}
+                        {% if app.user %}
+                            <li><a href="{{ path('security_logout') }}">Déconnexion</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <div class="welcome">
+                    {% if app.user %}
+                        <h3>Bonjour {{ app.user.username }}</h3>
+                    {% endif %}
+                    <h1>Vetux-Line</h1>
+                    <h2>Createur de ligne de vêtements</h2>
+                </div>
+            </header>
+        {% endblock %}
+    </body>
+</html>
