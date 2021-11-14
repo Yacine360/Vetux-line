@@ -21,18 +21,17 @@ Ce projet a pour but de créer une application web avec le framework symfony per
 
 * Une insription & identification avec hashage de mot de passe, confirmation de mot de passe et prise en compte des messages d'erreurs. 
 * Un sysème de rôle client & gestionnaire
-* Un espace clients
 * Un espace gestionnaire sécurisé avec plusieurs permission de gestionnaires
 * Un système d'upload de fichier CSV avec un id unique plus système de hashage en md5
 * Un système de fusion de fichiers CSV
 
 ### Première partie : Fusion++
 
-###**A/**
+### **A/**
 
 Construire un README.md (Celui que vous lisez actuellement).
 
-###**B/**
+### **B/**
 
 Pour notre part, nous avions commencé par la Fusion qui ce situe dans src/Services/Fusion.php, ensuite nous avions fait l'upload avec le code du controller qui ce situe dans src/Controller/UploadController.php et le services qui ce situe dans src/Services/FileUploader.php.
 
@@ -252,7 +251,7 @@ Une fois tout ceci effectué, nous sortons de la condition puis nous augmentons 
 
 Après avoir trié, chaque ligne et l'avoir déplacé dans la liste finale ($final), nous retournons la liste finale ($final).
 
-###**C/**
+### **C/**
 
 Nous avons créer 2 Types de rôles :
 
@@ -497,7 +496,7 @@ services:
             $uploadDir: '%upload_dir%'
 ```
 
-###**D/**
+### **D/**
 
 ```
 public function fusion(Fusion $fusionServices)
