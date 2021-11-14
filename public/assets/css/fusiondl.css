@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("../images/background-index.png");
+    height: 100vh;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+
+.wrapper {
+    width: 1170px;
+    margin: auto;
+}
+
+.nav-area {
+    float: right;
+    list-style: none;
+    margin-top: 30px;
+}
+
+.nav-area li {
+    display: inline-block;
+}
+
+.nav-area li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 20px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+.nav-area li a:hover {
+    color: lime;
+}
+
+.logo img {
+    width: 100px;
+    float: left;
+    height: auto;
+}
+
+.content {
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    margin: 10% 30%;
+    text-align: center;
+}
+
+.content h1 {
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: #fff;
+    text-transform:none;
+    font-size: 35px;
+}
+
+.content h1:hover {
+    color: lime;
+}
+
+.content h2 {
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #fff;
+    text-transform: none;
+    font-size: 20px;
+}
+
+.content h2:hover {
+    color: lime;
+}
+
+.input {
+    position: absolute;
+    left: -999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.labelStyle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 35px;
+    background: white;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: .3s;
+    text-decoration: none;
+}
+
+.textStyle {
+    font-weight: 600;
+    font-size: 18px;
+    color: lime;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.labelStyle:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+}
+
+.infoFileFusion {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 35px;
+    background: white;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: .3s;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.infoFileFusion:hover {
+    color: lime;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+}
