@@ -1,10 +1,6 @@
 # **Project BTS : Symfony**
 
-*Collaborateur* :
-
-* Enzo Carpentier
-* Kilian Moliere
-* Corentin Bonifacio
+Yacine el borgi
 
 ### Pré-requis :
 
