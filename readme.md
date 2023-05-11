@@ -1,6 +1,7 @@
 # **Project BTS : Symfony**
 
-Yacine el borgi
+Yacine El Borgi
+Enzo Carpatier
 
 ### Pré-requis :
 
